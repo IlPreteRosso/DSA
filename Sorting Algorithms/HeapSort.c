@@ -94,7 +94,8 @@ void maxHeapify(maxHeap_t *maxHeap, int i){
     int to_swap = i, left_child = 2 * i + 1, right_child = 2 * (i + 1);
     if (left_child < maxHeap->size){
         if (right_child < maxHeap->size){
-            if (maxHeap->arr[left_child] < maxHeap->arr[right_child]){
+            if (maxHeap->arr[left_child] < maxHeap->arr[right_child] && 
+               maxHeap->arr[i] < maxHeap->arr[right_child]){
                 to_swap = right_child;
             }
             else if (maxHeap->arr[i] < maxHeap->arr[left_child]){
